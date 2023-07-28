@@ -1,38 +1,140 @@
+
 .App {
+  padding: 15px 90px;
+  height: fit-content;
+  width: 38%;
+  border-radius: 5px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0px 0px 0px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.App:hover,.Image:hover {
+  box-shadow: 0 4px 8px 0 lightblue, 0 6px 20px 0 lightblue;
+}
+.reg-form-heading {
   text-align: center;
+  font-size: 30px;
 }
 
+.libray-text {
+  position: relative;
+  z-index: 1;
+  font-size: 70px;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  stop-opacity: 1;
+}
+
+.LoginRegisterImage {
+  height: 420px;
+  width: 100%;
+  height: 475px;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+.LoginRegisterImage:hover {
+  box-shadow: 0 4px 8px 0 lightblue, 0 6px 20px 0 lightblue;
+}
+.head {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  /* padding-top: 30px; */
+}
+.page-head {
+  height: 100px;
+  background-color: rgb(249, 249, 250);
+  width: 100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+.error {
+  color: red;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+button:disabled {
+  opacity: 0.35;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.anchor-links {
+  font-size: 15px !important;
+}
+.signIn-with {
+  text-align: center;
+}
+.gmail-text {
+  margin-top: auto;
+}
+.search-bar {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 3vh auto 0 auto;
+}
+.search-results {
+  width: 100%;
+  display: flex;
+  margin: 0px auto;
+  background-color: #fff;
+  max-height: 30vh;
+  overflow: auto;
+  border-radius: 0;
+}
+.result-item {
+  margin: 5px;
+}
+.result-item:hover {
+  background-color: bisque;
+}
+.header-search-bar {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-content: center;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#header-search-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
+.link-bar {
+  display: flex;
+  align-content: center;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  /* position: fixed; */
+   position: absolute;
+  /* left: 10px; */
+  top: 120px;
+  z-index: 991;
+}
+.link-bar .breadcrumb a {
+  text-decoration: none;
+  color: black;
+}
+.header-search-bar-main{
+ /* position: fixed; */
+ position: relative;
+}
+.resource_image{
+  transition: transform 0.3s;
+}
+.resource_image:hover {
+  transform: scale(1.1);
+}
+.no-page-found{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

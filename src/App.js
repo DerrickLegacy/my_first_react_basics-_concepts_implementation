@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from 'react'
+import MainPage from './Components/MainPage'
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import IOD from './Components/IOD';
+import Customs from './Components/Customs';
+import HomePage from './Components/HomePage';
+import Registration from './Components/Registration';
+import IAD from './Components/IAD';
+import HeaderSearchBar from './Components/HeaderSearchBar'
+import SearchFilter from './Components/SearchFilter';
+import Fiction from './Components/Fiction';
+import NoPageFoundPage from './Components/NoPageFoundPage'
+<link rel="stylesheet" href="path/to/flag-icon-css/css/flag-icon.min.css" />
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/iod" element={<IOD />} />
+        <Route path="/iad" element={<IAD />} />
+        <Route path="/search" element={<HeaderSearchBar />} />
+        <Route path="/customs" element={<Customs />} />
+        <Route path="/Registration" element={<Registration />} />
+        <Route path="/fiction" element={<Fiction />} />
+        <Route path='*' element={<NoPageFoundPage />} />
+        <Route path='/searchFilter' element={<SearchFilter />} />
 
-export default App;
+
+      </Routes>
+    </div>
+  )
+}
