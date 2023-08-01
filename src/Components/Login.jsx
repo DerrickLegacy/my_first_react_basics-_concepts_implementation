@@ -1,27 +1,33 @@
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Stack from 'react-bootstrap/Stack'
-import { useFormik } from 'formik';
-import * as yup from 'yup';
-import { Link } from 'react-router-dom';
-// import {useState} from 'react';
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import InputGroup from "react-bootstrap/InputGroup";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import { Link } from "react-router-dom";
+import { BsEnvelope } from "react-icons/bs";
 
 const initialValues = {
-  email: '',
-  password: '',
+  email: "",
+  password: "",
 };
 
 const validationSchema = yup.object().shape({
-  email: yup.string().max(35, 'Minimum is 35 Characters.').required('Required').email(),
-  password: yup.string().min(8, 'Minimum is 8 Characters.').required('Required'),
-  
+  email: yup
+    .string()
+    .max(35, "Minimum is 35 Characters.")
+    .required("Required")
+    .email(),
+  password: yup
+    .string()
+    .min(8, "Minimum is 8 Characters.")
+    .required("Required"),
 });
 
-function Login() {
+function Login({ childToParent }) {
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: validationSchema,
@@ -32,19 +38,28 @@ function Login() {
 
   return (
     <Form onSubmit={formik.handleSubmit}>
-      <p className='reg-form-heading'>Sign In
-      <Link to=""  className='anchor-links'><p>Or Register Account Here</p></Link>
-        
+      <p className="reg-form-heading">
+        Sign In <br />
+        <div onClick={() => childToParent("register")}>
+          <Link className="anchor-links link-decor">
+            <strong>Or Register Account Here</strong>
+          </Link>
+        </div>
       </p>
-      
+
       <Row>
         <Col>
           <Form.Group className="mb-1" controlId="formGridAddress1">
-            <FloatingLabel controlId="email" label="Email Address" className="mb-2">
+            <FloatingLabel
+              controlId="email"
+              label="Email Address"
+              className="mb-2"
+            >
               <Form.Control
+                className="custom-input"
                 type="email"
                 placeholder="Email Address"
-                {...formik.getFieldProps('email')}
+                {...formik.getFieldProps("email")}
               />
             </FloatingLabel>
             {formik.touched.email && formik.errors.email && (
@@ -57,9 +72,10 @@ function Login() {
         <Form.Group className="mb-1" controlId="formGridAddress1">
           <FloatingLabel controlId="password" label="Password" className="mb-2">
             <Form.Control
+              className="custom-input"
               type="password"
               placeholder="Password"
-              {...formik.getFieldProps('password')}
+              {...formik.getFieldProps("password")}
             />
           </FloatingLabel>
           {formik.touched.password && formik.errors.password && (
@@ -67,32 +83,81 @@ function Login() {
           )}
         </Form.Group>
       </Row>
-      <p className='reg-form-heading'>
-      <Link to="/forgotPassword" className='anchor-links'>
-        <p className="text-decoration-none">Forgot Password</p>
-      </Link>
-      </p>
-      <Button  className='text-center' variant="primary" type="submit" on>
-        Login
-      </Button>
+      <Row>
+        <div className="reg-form-heading link-decor">
+          <Link to="/forgotPassword" className="anchor-links link-decor">
+            <strong>Forgot Password</strong>
+          </Link>
+        </div>
+        <div className="login-checkbox link-decor">
+          <Form.Check
+            type="checkbox"
+            id="autoSizingCheck"
+            className="mb-2"
+            label="Remember me"
+          />
+        </div>
+        <div className="or-text text-center">
+          <Button variant="primary" type="submit">
+            Login
+          </Button>
+        </div>
+      </Row>
+
       <Container>
         <Row>
-          <Col><hr className="line" /></Col>
-          <Col xs={2} className="or-text text-center">Or</Col>
-          <Col><hr className="line" /></Col>
+          <Col>
+            <hr className="line" />
+          </Col>
+          <Col xs={2} className="or-text text-center">
+            Or
+          </Col>
+          <Col>
+            <hr className="line" />
+          </Col>
         </Row>
-    </Container>
-    <Container>
-      <div className='signIn-with'>
-        <p className="text-align-center" >Sign in with</p>
-        <p>
-          <Stack direction='horizontal' gap={2}>
-            <img src="/images/icons8-gmail-48.png" alt="Gmail Icon" />
-            <p className='gmail-text'>Gmail Account</p>
-          </Stack>
-        </p>
-      </div>
-    </Container>
+      </Container>
+      <Container>
+        <div className="signIn-with">
+          <p className="text-align-center">Sign in with</p>
+          <p>
+            <Link to="/" className="link-decor">
+              <Form.Label htmlFor="inlineFormInputGroup" visuallyHidden>
+                Gmial
+              </Form.Label>
+              <InputGroup className="mb-2">
+                <InputGroup.Text>
+                  <BsEnvelope size={24} style={{ color: "red" }} />
+                </InputGroup.Text>
+                <Form.Control
+                  disabled
+                  id="inlineFormInputGroup"
+                  placeholder="Gmail"
+                />
+              </InputGroup>
+            </Link>
+          </p>
+          <p>
+            <Form.Label htmlFor="inlineFormInputGroup" visuallyHidden>
+              URA Account
+            </Form.Label>
+            <InputGroup className="mb-2">
+              <InputGroup.Text>
+                <img
+                  src="/images/ura_logo_25.png"
+                  style={{ height: "28px" }}
+                  alt="URA -LOGO"
+                />
+              </InputGroup.Text>
+              <Form.Control
+                disabled
+                id="inlineFormInputGroup"
+                placeholder="URA Account"
+              />
+            </InputGroup>
+          </p>
+        </div>
+      </Container>
     </Form>
   );
 }

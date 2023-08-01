@@ -39,6 +39,17 @@ export default function RemoteDataExample() {
     {
       accessorKey: "petitioner",
       header: "Petitioner",
+      enableCopyButton:true,
+      muiTableBodyCellProps: ({ cell }) => ({
+        onClick: () => {
+          console.log(cell.getValue());
+          return (<div>{ cell.getValue() }</div>)
+
+        },
+      }),
+      // Cell: ({ cell }) => {
+      //   return <div>{cell.getValue()}</div>;
+      // },
     },
     {
       accessorKey: "defendant",
@@ -98,7 +109,7 @@ export default function RemoteDataExample() {
     //   accessorKey: "sadateOfReceipt",
     //   header: "Salary",
     //   filterVariant: "range-slider",
-    //   filterFn: "betweenInclusive", // default (or between)
+    //   filterFn: "betweenInclusiwve", // default (or between)
     //   muiTableHeadCellFilterSliderProps: {
     //     marks: true,
     //     max: 200_000, //custom max (as opposed to faceted max)

@@ -56,7 +56,11 @@ function MainPage() {
           <Col md="4">
             <Card>
               <Card.Body>
-                {status === "login" ? <Login /> : <Registration />}
+                {status === "login" ? (
+                  <Login childToParent={childToParent} />
+                ) : (
+                  <Registration />
+                )}
               </Card.Body>
             </Card>
           </Col>

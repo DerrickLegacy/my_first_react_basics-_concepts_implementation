@@ -3,7 +3,6 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { Container, Row, Col, } from 'react-bootstrap';
-// import CountryDropDownToggle from './CountryDropDownToggle';
 import { HiViewList } from 'react-icons/hi';
 import { CiViewColumn } from 'react-icons/ci';
 import Button from 'react-bootstrap/Button';
@@ -79,7 +78,7 @@ function Fiction() {
                                                         Display { }
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item onClick={() => handlePage(24)} >24 per page</Dropdown.Item>
+                                                        <Dropdown.Item onClick={() => handlePage(24)} >24 per page </Dropdown.Item>
                                                         <Dropdown.Item onClick={() => handlePage(36)}>36 per page</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
