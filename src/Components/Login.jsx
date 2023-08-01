@@ -86,7 +86,7 @@ function Login({ childToParent }) {
       <Row>
         <div className="reg-form-heading link-decor">
           <Link to="/forgotPassword" className="anchor-links link-decor">
-            <strong>Forgot Password</strong>
+            <strong>Forgot Password ?</strong>
           </Link>
         </div>
         <div className="login-checkbox link-decor">
