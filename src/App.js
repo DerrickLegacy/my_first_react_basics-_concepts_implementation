@@ -11,6 +11,7 @@ import HeaderSearchBar from './Components/HeaderSearchBar'
 import SearchFilter from './Components/SearchFilter';
 import Fiction from './Components/Fiction';
 import NoPageFoundPage from './Components/NoPageFoundPage'
+import Parent from './Components/Parent';
 <link rel="stylesheet" href="path/to/flag-icon-css/css/flag-icon.min.css" />
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
         <Route path="/fiction" element={<Fiction />} />
         <Route path='*' element={<NoPageFoundPage />} />
         <Route path='/searchFilter' element={<SearchFilter />} />
-
+        <Route path='/parent' element={<Parent />} />
 
       </Routes>
     </div>
