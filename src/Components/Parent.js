@@ -11,10 +11,6 @@ export default function Parent() {
         setData(info)
     }
     console.log(data);
-    // const  hello=()=> {
-        
-    // }
-
     useEffect(() => {
         console.log(data);
 },[data])

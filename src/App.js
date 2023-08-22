@@ -29,7 +29,6 @@ export default function App() {
         <Route path='*' element={<NoPageFoundPage />} />
         <Route path='/searchFilter' element={<SearchFilter />} />
         <Route path='/parent' element={<Parent />} />
-
       </Routes>
     </div>
   )
