@@ -36,7 +36,7 @@ export default function ResourceDetails({ shows, resource_author, resource_heade
                                         <h6>{resource_author}</h6> <hr />
                                         {/* <p>Description:</p> */}
                                         <p>{description}</p>
-                                    </Tab>
+                                    </Tab>      
                                     <Tab eventKey='author' title="Author" style={{ paddingTop: '20px' }} >
                                         <p><strong>Resource Attachment:</strong>  {resource_author}</p>
                                         <p> <strong>Source or API link ;</strong>  Uganda Revenue Authority</p>

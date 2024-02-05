@@ -1,7 +1,7 @@
 import { Card, Row, Col } from "react-bootstrap";
 import Header from "./Header";
-import Login from "./Login";
-import Registration from "./Registration";
+import Login from "../components/login&register/Login";
+import Registration from "../components/login&register/Registration";
 import { useState } from "react";
 
 function MainPage() {

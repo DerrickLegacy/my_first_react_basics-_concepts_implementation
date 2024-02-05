@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Stack } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
+
 
 export default function Header({ childToParent }) {
   const register = "register";
@@ -12,36 +12,13 @@ export default function Header({ childToParent }) {
 
   return (
     <>
-      <Container>
+      <Container style={{ marginTop: "10px" }}>
         <Row>
-          <Col md={1} style={{ marginTop: "10px" }}>
+          <Col md={1}>
             <img src="/images/ura_logo_25.png" alt="" />
           </Col>
           <Col md={11}>
             <div className="page-head">
-              <Container>
-                <Row>
-                  <Col>
-                    <Stack direction="horizontal" gap={2}>
-                      <Link className="link-decor" to="/home">
-                        Home
-                      </Link>
-                      <Link className="link-decor" to="/customs">
-                        Customs
-                      </Link>
-                      <Link className="link-decor" to="/io">
-                        IOD
-                      </Link>
-                      <Link className="link-decor" to="/iad">
-                        IAD
-                      </Link>
-                      <Link className="link-decor" to="/cart">
-                        Cart
-                      </Link>
-                    </Stack>
-                  </Col>
-                </Row>
-              </Container>
               <Container>
                 <Row>
                   <Col xs={10}>

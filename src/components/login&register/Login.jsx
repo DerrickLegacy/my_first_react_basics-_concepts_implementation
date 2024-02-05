@@ -2,13 +2,13 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import InputGroup from "react-bootstrap/InputGroup";
+// import InputGroup from "react-bootstrap/InputGroup";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-import { BsEnvelope } from "react-icons/bs";
+// import { BsEnvelope } from "react-icons/bs";
 
 const initialValues = {
   email: "",
@@ -104,7 +104,7 @@ function Login({ childToParent }) {
         </div>
       </Row>
 
-      <Container>
+      {/* <Container>
         <Row>
           <Col>
             <hr className="line" />
@@ -116,8 +116,8 @@ function Login({ childToParent }) {
             <hr className="line" />
           </Col>
         </Row>
-      </Container>
-      <Container>
+      </Container> */}
+      {/* <Container>
         <div className="signIn-with">
           <p className="text-align-center">Sign in with</p>
           <p>
@@ -157,7 +157,7 @@ function Login({ childToParent }) {
             </InputGroup>
           </p>
         </div>
-      </Container>
+      </Container> */}
     </Form>
   );
 }

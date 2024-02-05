@@ -6,10 +6,10 @@ import { HiViewList } from "react-icons/hi";
 import { CiViewColumn } from "react-icons/ci";
 import Button from "react-bootstrap/Button";
 import { FaFileDownload } from "react-icons/fa";
-import Details from "./Details";
+import Details from "../../pages/detailsPage/Details";
 import { useState, useEffect } from "react";
 import Stack from "react-bootstrap/Stack";
-import Filters from "./Filters";
+import Filters from "../Filter/Filters";
 
 function Fiction() {
   const [images, setImages] = useState([]);
@@ -55,7 +55,7 @@ function Fiction() {
             <Filters />
           </Col>
           <Col sm={9}>
-            <Card sty le={{ width: "100%" }}>
+            <Card style={{ width: "100%" }}>
               <Card.Img
                 variant="top"
                 style={{ height: "160px", objectFit: "cover" }} // Set objectFit to 'cover'
